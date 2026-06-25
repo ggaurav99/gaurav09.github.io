@@ -50,7 +50,26 @@ function animate() {
 
     t += 0.003;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "rgba(10,11,16,0.2)";
+    
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.save();
+    
+    ctx.beginPath();
+
+    ctx.rect(0, 0, canvas.width, canvas.height);
+
+// Hero text region
+    ctx.roundRect(
+      20,
+      120,
+      900,
+      500,
+      30
+);
+
+ctx.clip("evenodd");
 
 
 
@@ -88,12 +107,12 @@ function animate() {
         p.y + uy * len / 2
       );
 
-        ctx.strokeStyle = "rgba(169,159,224,0.45)";
+        ctx.strokeStyle = "rgba(169,159,224,0.17)";
         ctx.lineWidth = 1.1;
         ctx.stroke();
 
     });
-
+      ctx.restore();
     requestAnimationFrame(animate);
 
 }

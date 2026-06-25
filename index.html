@@ -225,16 +225,17 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
 
-    #phase-canvas{
-      position:absolute;
-      right:40px;
-      top:50%;
-      transform:translateY(-50%);
-      width:520px;
-      height:520px;
-      opacity:0.22;
-      pointer-events:none;
-      z-index:1;
+    #flow-canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 0;
+
+    pointer-events: none;
     }
     @media (max-width: 700px) {
       nav { padding: 0 1.25rem; } .nav-links { gap: 1.1rem; }
@@ -256,7 +257,7 @@
 </head>
 <body>
 
-<canvas id="phase-canvas"></canvas>
+<canvas id="flow-canvas"></canvas>
 
 
 
@@ -499,99 +500,10 @@ function handleSubmit(e) {
   setTimeout(() => { btn.style.display='none'; document.getElementById('form-status').style.display='block'; }, 1000);
 }
 
-const canvas = document.getElementById("phase-canvas");
-const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-    canvas.width = 520;
-    canvas.height = 520;
-}
-
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-const particles = [];
-
-for(let x=-2.6; x<=2.6; x+=0.28){
-
-    for(let y=-2.6; y<=2.6; y+=0.28){
-
-        particles.push({x,y});
-
-    }
-
-}
-
-let time = 0;
-
-function field(x, y) {
-
-    return {
-
-        dx: y,
-
-        dy:
-            x
-            - x*x*x
-            - 0.25*y
-            + 0.18*Math.sin(time + x*1.4)
-            + 0.12*Math.cos(time*0.7 + y*1.8)
-
-    };
-
-}
-
-function draw() {
-
-    ctx.fillStyle = "rgba(10,11,16,0.05)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    time += 0.01;
-    ctx.strokeStyle = "rgba(169,159,224,0.58)";
-    ctx.lineWidth = 1.8;
-
-    particles.forEach(p => {
-
-    const oldx = p.x;
-    const oldy = p.y;
-
-    const v = field(p.x, p.y);
-
-    p.x += v.dx * 0.012;
-    p.y += v.dy * 0.012;
-
-    if (
-        p.x > 3 || p.x < -3 ||
-        p.y > 3 || p.y < -3
-    ) {
-        p.x = (Math.random()-0.5)*5.5;
-        p.y = (Math.random()-0.5)*5.5;
-        return;
-    }
-
-    ctx.strokeStyle = "rgba(169,159,224,0.35)";
-    ctx.lineWidth = 1.4;
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        canvas.width/2 + oldx*70,
-        canvas.height/2 - oldy*70
-    );
-
-    ctx.lineTo(
-        canvas.width/2 + p.x*70,
-        canvas.height/2 - p.y*70
-    );
-
-    ctx.stroke();
-
-});
-
-    requestAnimationFrame(draw);
-}
-
-draw();
 </script>
+
+<script src="flowfield.js"></script>
 
 </body>
 </html>

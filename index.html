@@ -519,19 +519,31 @@ for (let i = 0; i < 120; i++) {
     });
 }
 
+let time = 0;
+
 function field(x, y) {
+
     return {
+
         dx: y,
-        dy: x - x*x*x - 0.25*y
+
+        dy:
+            x
+            - x*x*x
+            - 0.25*y
+            + 0.18*Math.sin(time + x*1.4)
+            + 0.12*Math.cos(time*0.7 + y*1.8)
+
     };
+
 }
 
 function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.strokeStyle = "rgba(169,159,224,0.18)";
-    ctx.lineWidth = 1;
+    time += 0.01;
+    ctx.strokeStyle = "rgba(169,159,224,0.58)";
+    ctx.lineWidth = 1.8;
 
     particles.forEach(p => {
 
@@ -540,7 +552,7 @@ function draw() {
         let x = p.x;
         let y = p.y;
 
-        for (let i = 0; i < 120; i++) {
+        for (let i = 0; i < 220; i++) {
 
             const px = canvas.width/2 + x*70;
             const py = canvas.height/2 - y*70;
@@ -556,8 +568,7 @@ function draw() {
 
         ctx.stroke();
 
-        p.x += (Math.random()-0.5)*0.01;
-        p.y += (Math.random()-0.5)*0.01;
+      
 
     });
 

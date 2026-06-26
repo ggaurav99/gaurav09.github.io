@@ -10,20 +10,24 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:        #0a0b10;
-      --bg2:       #10111a;
-      --slate:     #181926;
-      --slate2:    #202230;
-      --violet:    #7c6fcd;
-      --violet2:   #a99fe0;
-      --violet-dim:rgba(124,111,205,0.15);
-      --cream:     #e8e6f0;
-      --fog:       #9e9bb8;
-      --muted:     #52506a;
-      --rule:      rgba(124,111,205,0.12);
-      --rule2:     rgba(124,111,205,0.22);
-      --radius:    4px;
-    }
+    --bg:        #0a0b10;
+    --bg2:       #10111a;
+    --slate:     #181926;
+    --slate2:    #202230;
+
+    --violet:    #7c6fcd;
+    --violet2:   #a99fe0;
+    --violet-dim: rgba(124,111,205,0.15);
+
+    --cream:     #e8e6f0;
+    --fog:       #9e9bb8;
+    --muted:     #52506a;
+
+    --rule:      rgba(124,111,205,0.12);
+    --rule2:     rgba(124,111,205,0.22);
+
+  --radius:    4px;
+}
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Source Serif 4', Georgia, serif;
@@ -199,9 +203,9 @@
     /* SKILLS */
     .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--rule2); border: 1px solid var(--rule2); border-radius: var(--radius); overflow: hidden; }
     .skill-cat { background: var(--bg2); padding: 1.7rem; }
-    .skill-cat-title { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--violet); margin-bottom: 1rem; }
+    .skill-cat-title { font-family: 'DM Mono', monospace; font-size: 0.62rem;font-weight:600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream1); margin-bottom: 1rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag { background: var(--violet-dim); border: 1px solid var(--rule2); color: var(--fog); font-size: 0.78rem; padding: 0.22rem 0.65rem; border-radius: 2px; font-family: 'Source Serif 4', serif; font-style: italic; }
+    .tag { background: var(--violet-dim); border: 1px solid var(--rule2); color: var(--fog2); font-size: 0.78rem; padding: 0.22rem 0.65rem; border-radius: 2px; font-family: 'Source Serif 4', serif; font-style: italic; }
 
     /* PROJECTS */
     .projects-list { display: flex; flex-direction: column; gap: 2px; }
@@ -217,6 +221,46 @@
     .proj-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .proj-link { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.08em; color: var(--violet2); text-decoration: none; transition: color 0.2s; }
     .proj-link:hover { color: var(--cream); }
+
+    .proj-links{
+    display:flex;
+    gap:0.6rem;
+    flex-wrap:wrap;
+}
+
+    .paper-btn{
+
+    display:inline-flex;
+    align-items:center;
+
+    padding:0.38rem 0.85rem;
+
+    border:1px solid var(--rule2);
+    border-radius:4px;
+
+    font-family:'DM Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+
+    color:var(--violet2);
+    text-decoration:none;
+
+    background:transparent;
+
+    transition:all 0.25s ease;
+}
+
+    .paper-btn:hover{
+
+      background:var(--violet);
+
+      border-color:var(--violet);
+
+      color:white;
+
+      transform:translateY(-2px);
+
+}
 
     /* BEYOND */
     .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
@@ -252,7 +296,7 @@
     textarea { resize: vertical; min-height: 120px; }
 
     /* FOOTER */
-    footer { position: relative; z-index: 2; border-top: 1px solid var(--rule2); padding: 2rem 3.5rem; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; }
+    footer { position: relative; z-index: 2; border-top: 1px solid var(--rule2); padding: 2rem 3.5rem; display: flex; justify-content: space-between; align-items: center; color: var(--violet1); font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; }
 
     /* FADE IN */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -326,7 +370,7 @@
 <section id="about">
   <div class="fade-in">
     <div class="section-header">
-      <div class="section-label">§ 01</div>
+      <div class="section-label"></div>
       <h2 class="section-title">About me</h2>
     </div>
     <div class="about-body">
@@ -354,7 +398,7 @@
 <section id="skills">
   <div class="fade-in">
     <div class="section-header">
-      <div class="section-label">§ 02</div>
+      <div class="section-label"></div>
       <h2 class="section-title">Skills &amp; tools</h2>
     </div>
     <div class="skills-grid">
@@ -396,7 +440,7 @@
 <section id="projects">
   <div class="fade-in">
     <div class="section-header">
-      <div class="section-label">§ 03</div>
+      <div class="section-label"></div>
       <h2 class="section-title">Research</h2>
     </div>
     <div class="projects-list">
@@ -408,13 +452,28 @@
         <div class="proj-title">SVITR Disease Model with Behavioural Dynamics</div>
         <p class="proj-desc">A coupled epidemiological-behavioural model where disease dynamics are shaped by individual decision-making and vice-versa . Using the <strong>Prelec probability weighting function</strong>, the model captures how optimism, scepticism, and information access distort perceived risk. Combined with <strong>hyperbolic discounting</strong> — which models how impatience affects decisions over time — the model computes perceived payoffs for each strategy (vaccination, antibiotics, or none). These payoffs feed back into disease dynamics, creating a genuine two-way system between behaviour and contagion.</p>
         <div class="proj-footer">
-          <div class="proj-stack tags">
-            <span class="tag">PyRates/PyCoBi</span><span class="tag">Bifurcation Theory</span>
-            <span class="tag">Game Theory</span><span class="tag">NonLinear Dynamics</span>
-            <span class="tag">AUTO07p</span>
-          </div>
-          <a href="https://github.com/ggaurav99" class="proj-link" target="_blank">GitHub ↗</a>
-        </div>
+
+    <div class="proj-stack tags">
+        ...
+    </div>
+
+    <div class="proj-links">
+
+        <a href="#" class="paper-btn">Draft</a>
+
+        <a href="#" class="paper-btn">Poster</a>
+
+        <a href="#" class="paper-btn">Notes</a>
+
+        <a href="https://github.com/ggaurav99"
+           class="paper-btn"
+           target="_blank">
+            Code ↗
+        </a>
+
+    </div>
+
+</div>
       </div>
       <div class="project-card">
         <div class="proj-meta">
@@ -424,22 +483,121 @@
         <div class="proj-title">Brain Controllability &amp; Trait Anxiety Correlates</div>
         <p class="proj-desc">The standard way to diagnose trait anxiety is the STAI — a self-report questionnaire dependent entirely on patient honesty. This research tries to find an objective alternative. Using <strong>Network Control Theory</strong> applied to brain connectomes, we assess the controllability of different brain regions: how easily each region can steer the brain into different activity states. The goal is to find controllability metrics that correlate with STAI scores, so a clinician can compute a diagnosis from brain scans without requiring self-report.</p>
         <div class="proj-footer">
-          <div class="proj-stack tags">
-            <span class="tag">NiBabel</span><span class="tag">Network Control Theory</span>
-            <span class="tag">Brain Imaging</span><span class="tag">Nilearn</span><span class="tag">Tractography</span>
-          </div>
-          <a href="https://github.com/ggaurav99" class="proj-link" target="_blank">GitHub ↗</a>
+
+    <div class="proj-stack tags">
+        ...
+    </div>
+
+    <div class="proj-links">
+
+        <a href="#" class="paper-btn">Draft</a>
+
+        <a href="#" class="paper-btn">Poster</a>
+
+        <a href="#" class="paper-btn">Notes</a>
+
+        <a href="YOUR_GITHUB_LINK"
+           class="paper-btn"
+           target="_blank">
+            Code ↗
+        </a>
+
+    </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section id="internships">
+
+  <div class="section-header">
+    <div class="section-label"></div>
+    <h2 class="section-title">Past Internships</h2>
+</div>
+
+  <div class="projects-list">
+
+    <div class="project-card fade-in">
+
+        <div class="proj-meta">
+            <span class="proj-badge">Summer School</span>
+            <span class="proj-status">May 2024 – June 2024</span>
+        </div>
+
+        <div class="proj-title">
+            IISER Pune — Stochastic Calculus
+        </div>
+
+        <div class="proj-desc">
+            Worked under <strong>Dr. Anindya Goswami</strong> on interest rate modelling,
+            derivative pricing and fixed-income mathematics. Studied classical short-rate
+            models including Vasicek, CIR, Hull–White and Black–Derman–Toy while exploring
+            their applications to bond pricing and interest-rate derivatives.
+        </div>
+
+        <div class="proj-footer">
+
+            <div class="proj-stack tags">
+                <span class="tag">Mathematical Finance</span>
+                <span class="tag">Interest Rate Models</span>
+                <span class="tag">Derivative Pricing</span>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="proj-links">
+                <a href="#" class="paper-btn">Certificate</a>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="project-card fade-in">
+
+    <div class="proj-meta">
+        <span class="proj-badge">Research Internship</span>
+        <span class="proj-status">June 2024 – September 2024</span>
+    </div>
+
+    <div class="proj-title">
+        Polymath Jr. — Nonlocal Calculus
+    </div>
+
+    <div class="proj-desc">
+        Worked under <strong>Dr. Mikil Foss</strong> and <strong>Dr. Petronela Radu</strong>
+        (University of Nebraska–Lincoln) on problems in
+        <strong>nonlocal calculus</strong> and its applications.Contributed to a collaborative project aiming to apply nonlocal calculus to real-world applications, enhancing
+        the practical relevance of theoretical findings
+    </div>
+
+    <div class="proj-footer">
+
+        <div class="proj-stack tags">
+            <span class="tag">Nonlocal Calculus</span>
+            <span class="tag">Applied Analysis</span>
+            <span class="tag">Mathematical Modelling</span>
+            <span class="tag">Research Writing</span>
+        </div>
+
+        <div class="proj-links">
+            <a href="#" class="paper-btn">Report</a>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- BEYOND -->
 <section id="beyond">
   <div class="fade-in">
     <div class="section-header">
-      <div class="section-label">§ 04</div>
+      <div class="section-label"></div>
       <h2 class="section-title">Beyond research</h2>
     </div>
     <div class="beyond-grid">
@@ -479,7 +637,7 @@
 <section id="contact">
   <div class="fade-in">
     <div class="section-header">
-      <div class="section-label">§ 05</div>
+      <div class="section-label"></div>
       <h2 class="section-title">Get in touch</h2>
     </div>
     <div class="contact-grid">

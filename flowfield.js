@@ -12,7 +12,7 @@ window.addEventListener("resize", resize);
 
 const particles = [];
 
-for (let i = 0; i < 3000; i++) {
+for (let i = 0; i < 5000; i++) {
 
     particles.push({
 
@@ -72,7 +72,7 @@ function animate() {
             p.y = Math.random() * canvas.height;
         }
 
-        const len = 6;
+        const len = 8;
 
         const mag = Math.hypot(v.dx, v.dy) + 1e-6;
 

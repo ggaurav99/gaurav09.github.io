@@ -51,14 +51,23 @@
     }
     .nav-logo {
       font-family: 'DM Mono', monospace;
-      font-size: 0.75rem; letter-spacing: 0.14em;
-      color: var(--violet2); text-decoration: none; text-transform: uppercase;
+      font-size: 0.77rem; 
+      font-weight : 600 ;
+      letter-spacing: 0.14em;
+      color: var(--violet2); 
+      text-decoration: none; 
+      text-transform: uppercase;
     }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      font-family: 'DM Mono', monospace; font-size: 0.67rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); text-decoration: none; transition: color 0.2s;
+      font-family: 'DM Mono', monospace; 
+      font-size: 0.77rem;
+      letter-spacing: 0.14em; 
+      text-transform: uppercase;
+      color: var(--violet2); 
+      text-decoration: none; 
+      transition: color 0.2s;
+      font-weight: 600 ;
     }
     .nav-links a:hover { color: var(--cream); }
 
@@ -130,7 +139,7 @@
     font-family: 'DM Mono', monospace;
 
     font-size: 0.82rem;
-    font-weight: 500;
+    font-weight: 600;
 
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -228,7 +237,7 @@
 
     /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
-    .contact-info p { font-size: 0.95rem; color: var(--fog); font-weight: 300; line-height: 1.85; margin-bottom: 2rem; }
+    .contact-info p { font-size: 0.95rem; color: var(--fog2); font-weight: 300; line-height: 1.85; margin-bottom: 2rem; }
     .socials { display: flex; flex-direction: column; }
     .social-link { display: flex; align-items: center; gap: 1rem; color: var(--fog); text-decoration: none; font-size: 0.85rem; padding: 0.75rem 0; border-bottom: 1px solid var(--rule); transition: color 0.2s; }
     .social-link:hover { color: var(--cream); }
@@ -305,7 +314,7 @@
     <span class="hero-topic-line">Computational Neuroscience.</span>
   </div>
   <div class="hero-rule"></div>
-  <p class="hero-sub">Truth has to be given in riddles. People can't take truth if it comes charging at them like a bull. The bull is always killed. You have to give people the truth in a riddle, hide it so they go looking for it and find it piece by piece; that way they learn to live with it. - Chaim Potok, The Gift of Asher Lev</p>
+  <p class="hero-sub">"Truth has to be given in riddles. People can't take truth if it comes charging at them like a bull. The bull is always killed. You have to give people the truth in a riddle, hide it so they go looking for it and find it piece by piece; that way they learn to live with it." - Chaim Potok, The Gift of Asher Lev</p>
   <p class="hero-institution">Applied Mathematics · Control Theory · Philosophy · Music</p>
   <div class="hero-cta">
     <a href="#projects" class="btn btn-primary">View research</a>
@@ -400,8 +409,8 @@
         <p class="proj-desc">A coupled epidemiological-behavioural model where disease dynamics are shaped by individual decision-making and vice-versa . Using the <strong>Prelec probability weighting function</strong>, the model captures how optimism, scepticism, and information access distort perceived risk. Combined with <strong>hyperbolic discounting</strong> — which models how impatience affects decisions over time — the model computes perceived payoffs for each strategy (vaccination, antibiotics, or none). These payoffs feed back into disease dynamics, creating a genuine two-way system between behaviour and contagion.</p>
         <div class="proj-footer">
           <div class="proj-stack tags">
-            <span class="tag">PyRates</span><span class="tag">ODE Systems</span>
-            <span class="tag">Game Theory</span><span class="tag">PyCoBi</span>
+            <span class="tag">PyRates/PyCoBi</span><span class="tag">Bifurcation Theory</span>
+            <span class="tag">Game Theory</span><span class="tag">NonLinear Dynamics</span>
             <span class="tag">AUTO07p</span>
           </div>
           <a href="https://github.com/ggaurav99" class="proj-link" target="_blank">GitHub ↗</a>
@@ -488,7 +497,7 @@
           <div class="form-group"><label for="femail">Email</label><input type="email" id="femail" placeholder="your@email.com" required /></div>
         </div>
         <div class="form-group"><label for="fsubject">Subject</label><input type="text" id="fsubject" placeholder="What's this about?" /></div>
-        <div class="form-group"><label for="fmessage">Message</label><textarea id="fmessage" placeholder="Tell me what's on your mind..." required></textarea></div>
+        <div class="form-group"><label for="fmessage">Message</label><textarea id="fmessage" placeholder="Your Message"..." required></textarea></div>
         <button type="submit" class="btn btn-primary" id="submit-btn" style="align-self:flex-start">Send message →</button>
         <p id="form-status" style="font-size:0.78rem;color:var(--violet2);display:none;font-family:'DM Mono',monospace;letter-spacing:0.06em;">Message received. I'll be in touch.</p>
       </form>
